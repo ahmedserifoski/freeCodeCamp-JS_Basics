@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		
+		console.log("Hello world");
+
+	/*
+
+	function myFunction() {
+		var myArray = [];
+
+		for (var i = 0; i < 7; i++) {
+			myArray.push(i);
+		}
+
+		console.log(myArray);
+
+	}
+
+	myFunction();
+////////////////////////////////////////////////////////////
+
+	function multiply(arr) {
+		var product = 1;
+
+		for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr[i].length; j++) {
+				product *= arr[i][j];
+			}
+		}
+
+		return product;
+	}
+
+
+	console.log(multiply([[1, 2], [3, 4]]));
+
+	///////////////////////////////////////////////////
+
+	myArray = [];
+
+	var i = 20;
+
+	do {
+		myArray.push(i);
+		i++
+	} while (i < 22); 
+
+	console.log(i, myArray);
+
+	
+///////////////////////////////////////////////////////
+
+
+	function myFunc(a, b) {
+		if (a > b) {
+			return a;
+		} 
+
+		return b;
+	}
+
+	console.log(myFunc(2, 3));
+
+	
+////////////////////////////////////////////////////////////
+	
+
+	var num1 = window.prompt("Please enter the first number");
+	var num2 = window.prompt("Please enter the secont number");
+
+	if(parseInt(num1, 10) > parseInt(num2, 10)) {
+		console.log("The larger number between " + num1 + " and " + num2 + " is " + num1);
+	} 
+	else if (parseInt(num1, 10) < parseInt(num2, 10)) {
+		console.log("The larger number between " + num1 + " and " + num2 + " is " + num2 );
+	} else {
+		console.log("The number are equal");
+	}
+	
+	
+////////////////////////////////////////////////////////
+	//Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(name, prop){
+// Only change code below this line
+for (var i = 0; i < contacts.length; i++) {
+	if (contacts[i].firstName == name) {
+		return contacts[i][prop] || "There is no such prop";
+	}  
+} return "There is no such nameee";
+// Only change code above this line
+}
+
+// Change these values to test your function
+var data = lookUpProfile("Sherlock", "likes");
+
+console.log(data);
+
+-------------------------------------------------------------
+
+function mathe() {
+	return Math.random();
+}
+
+console.log(mathe());
+
+------------------------------------------------------
+console.log(Math.floor( Math.random() * 20));
+
+
+---------------------------------------------------
+function randomRange(myMin, myMax) {
+
+return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+
+}
+
+// Change these values to test your function
+var myRandom = randomRange(1, 3);
+
+console.log(myRandom);
+
+----------------------------------------------------
+CONDITIONAL OPERATOR
+
+
+function greater(a, b) {
+	return a > b ? "A is greater than B" : "B is greater than A";	
+}
+
+console.log(greater(2, 3));
+
+-------------------------------------------------
+
+FACTORIAL RECURSION
+
+function countdown(i) {
+	console.log(i);
+	  if(i <= 0) {
+		return;
+	} else {
+		countdown(i - 1);
+	}
+}
+
+console.log(countdown(3));
+ 
+------------------------------------------------------
+
+
+function factorial(x) {
+	if (x == 1) {
+		return 1;
+	} else {
+		return x * factorial(x - 1);
+	}
+}
+
+console.log(factorial(3));
+----------------------------------------
+
+MULTIPLY RECURSION
+
+
+function multiply(arr, n) {
+	if (n <= 0) {
+		return arr[0];
+	} else {
+		return multiply(arr, n - 1) * arr[n];
+	}
+}
+
+var multi = multiply([4, 5, 6], 2);
+
+console.log(multi);
+
+-----------------------------------------
+SUM RECURSION
+
+function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    return arr[0];
+  } else {
+    return sum(arr, n - 1) + arr[n];
+  }
+  // Only change code above this line
+}
+
+console.log(sum([4, 5, 6], 2));
+
+
+----------------------------------------------------
+COUNTUP RECURSION
+
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5));
+-------------------------------------------------------------
+RANGE OF NUMBERS RECURSION
+
+function rangeOfNumbers(startNum, endNum) {
+	return startNum === endNum
+	? [startNum] 
+	: rangeOfNumbers(startNum, endNum - 1).concat(endNum);
+}
+
+ console.log(rangeOfNumbers(3, 7));
+
+----------------------------------------------------------------
+ ARROW FUNCTIONS
+
+
+
+var myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+
+console.log(myConcat([1, 2], [3, 4, 5, 6, 7]));
+------------------------------------------------------------------------
+SET DEFAULT PARAMETERS
+
+
+
+const increment = (number = 1, value = 1) => number + value;
+
+console.log(increment(5, 2));
+console.log(increment(5));
+console.log(increment(3, 7));
+--------------------------------------------------------------------
+
+
+
+REST PARAMETER WITH FUNCTION PARAMETERS
+
+
+
+const sum = (...args) => {
+  
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3)); // 6
+
+SPREAD OPERATOR
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];  // change this line
+
+console.log(arr2);
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+----------------------------------------------------------
+DESTRUCTURING ASSIGNMENT
+
+
+const AVG_TEMPERATURES = {
+	today: 77,
+	tomorrow: 79
+};
+
+
+function getTempOfTmrw(avgTemp) {
+	"use strict";
+
+	const {tomorrow: tempOfTomorrow} = avgTemp;
+	return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+-----------------------------------------------
+
+OKLEPAJI ZAKLEPAJI: Not yet clear
+
+
+
+console.log(() => {
+	console.log("HELOOO");
+}
+);
+
+var myVar = () => {
+	console.log("Hi there");
+};
+
+console.log(myVar);
+
+console.log((() => new Date())());
+
+---------------------------------------------
+
+DESTRUCTURING ASSSIGNMENT
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [, , ...brr] = list; // change this
+  // change code above this line
+  return brr;
+}
+
+const arr = removeFirstTwo(source);
+
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+
+----------------------------------------------------------------------------
+
+CONSTRUCTOR FUNCTIONS
+
+
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+
+console.log(zeus);
+------------------------------------------------------------------------------------
+CNSTRUCTOR FUNCTION WITH CLASS SYNTAX
+
+
+
+
+class Vegetable {
+	constructor(name) {
+		this.name = name;
+	}
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name);
+
+const broccoli = new Vegetable('broccoli');
+console.log(broccoli.name);
+
+const pickle = new Vegetable('pickle');
+console.log(pickle.name);
+
+
+function makeClass() {
+	class Fruit {
+		constructor(name, health) {
+			this.name = name;
+			this.health = health;
+		}
+	}
+	return Fruit;
+}
+
+const Fruit = makeClass();
+
+const apple = new Fruit('apple', 6);
+console.log(apple.name);
+console.log(apple.health);
+
+---------------------------------------------------------------------------
+GETTER AND SETTER
+
+
+class Thermostat {
+    constructor (Fahrenheit) {
+        this._celsius = 5/9 * (Fahrenheit - 32);
+    }
+    get temperature() {
+        return this._celsius;
+    }
+    set temperature(myTemp) {
+        this._celsius = myTemp;
+    }
+}
+
+
+
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+console.log(temp);
+
+thermos.temperature = 32;
+temp = thermos.temperature; // 26 in C
+
+console.log(temp);
+--------------------------------------------------------------------------------
+
+RESOLVE RECIEVE PROMISE
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    // change this line
+    resolve("We got the data");
+  } else {  
+    // change this line
+    reject("Data not received");
+  }
+});
+
+----------------------------------------------------------------------
+HANDLE A RESOLVE AND REJECT 
+
+const makeServerRequest = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+*/
+
+	</script>
+
+</body>
+</html>
