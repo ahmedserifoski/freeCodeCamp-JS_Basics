@@ -148,9 +148,28 @@ let result = calRegex.test(rickyAndCal);
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Regular Expressions: Match Ending String Patterns
 
-let caboose = "The last car on a train is the caboose";
-let lastRegex = /caboose$/; // Change this line
-let result = lastRegex.test(caboose);
+function testing (caboose, lastRegex) {
+    let cabo = "Thelastcaronatrainisthecaboose";
+    let lastReg = /caboose$/; // Change this line
+    let result = lastReg.test(caboose);
+console.log(result);
+}
+
+console.log(testing("Daniel", "l"));
+
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  let lastTarget = /target$/;
+  let found = lastTarget.test(str);
+  if (found) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(confirmEnding("Bastian", "n"));
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,8 +177,8 @@ Regular Expressions: Match All Letters and Numbers
 
 let quoteSample = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g; // Change this line
-let result = quoteSample.match(alphabetRegexV2).length;
-
+let resultt = quoteSample.match(alphabetRegexV2).length;
+console.log(resultt);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Regular Expressions: Match Everything But Letters and Numbers
