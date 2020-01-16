@@ -218,31 +218,202 @@ let somearr = [[2,5,7,6], [3,7,4, 4]];
 console.log(somearr[0].length);
 
 ---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Confirm the Ending
 
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  let regex = new RegExp (target + "$");;
+  let found = regex.test(str);
+  return found;
+}
+
+console.log(confirmEnding("Bastian", "n"));
+///////////////////////////////////////////////////////////////////////////
+FIDDLING AROUND
+
+let b = "Bastian";
+let end = "n";
+let reg = /n$/;
+let found = reg.test(b);
+console.log(found);
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Repeat a String Repeat a String
+MY DUMB SOLUTION
+
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  let repeat = [];
+  let string = "";
+  for (let i = 0; i < num; i++) {
+    repeat.push(str);
+    
+  }
+  string = repeat.toString();
+  let last = string.replace(/,/g, '');
+  return last;
+}
+
+repeatStringNumTimes("abc", 3);
+/////////////////////////////////////////////////////////////////
+FCC SOLUTION
+
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  let rocky = "";
+  while (num > 0) {
+    rocky += str;
+    num --
+  }
+  return rocky;
+}
+
+console.log(repeatStringNumTimes("abc", 3));
+
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Truncate a String
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  if (str.length > num) {
+    str = str.substring(0, num);
+    return str + "...";
+  } else {
+    return str;
+  }
+}
+
+
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+///////////////////////////////////////////////////////////////////////
+FCC TERNARY OPERATOR
+
+function truncateString(str, num) {
+  return str.length > num ? str.slice(0, num) + "..." : str;
+}
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Finders Keepers
+
+function findElement(arr, func) {
+
+  let num = arr.filter(func);
+
+  if (num.length > 0) {
+    return num[0];
+  } 
+  return undefined;
+  
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Boo who
+
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+  if (typeof(bool) === "boolean") {
+    return true;
+  }
+  return false;
+}
+
+booWho(null);
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Title Case a Sentence
+
+function titleCase(str) {
+  return str.toLowerCase().replace(/(^|\s)\S/g, x => x.toUpperCase());
+}
+
+titleCase("I'm a little tea pot");
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Slice and Splice
+
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let array1 = arr1.slice(0, );
+  let array2 = arr2.slice(0, );
+  
+  console.log(array1);
+
+  for( let i = 0; i < array1.length; i++) {
+    array2.splice(n, 0, array1[i]);
+    n++
+  }
+  
+  console.log(array2);
+  return array2;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Falsy Bouncer
+
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  for (let i = arr.length - 1; i >=0; i--) {
+    if (!arr[i]) {
+      arr.splice(i, 1)
+    }
+  }
+  return arr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+///////////////////////////////////////////////////////////////
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  let arr2 = [];
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i]) {
+      arr2.push(arr[i]);
+    }
+  }
+  return arr2;
+}
+
+bouncer([7, "ate", "", false, 9]);
 
 ---------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  let arr2 = arr.slice(0, );
+  for (let i = 0; i < arr2.length; i++) {
+    if (!arr[i]) {
+      arr.splice(arr[i], 1);
+    }
+  }
+  return arr;
+}
 
 
----------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------
 
 */
+
+
+
+
+
+
+
+
+
+
 
 
 
