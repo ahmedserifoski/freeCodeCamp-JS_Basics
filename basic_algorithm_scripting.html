@@ -382,29 +382,120 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9]);
 
 ---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Where do I Belong
 
+MY SOLUTION
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  arr = arr.sort((a,b) => a - b);
+  console.log('sortedArr = ' + JSON.stringify(sortedArr) + '\n');
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.length === 0) {
+      return 0;
+    } else if ( num < arr[i]) {
+      return arr.indexOf(arr[i]);
+    } else if ( num == arr[i]) {
+      return arr.indexOf(arr[i]);
+    } else if ( num >= arr[i] && num <= arr[i + 1]) {
+      return arr.indexOf(arr[i + 1]);
+    } 
+     
+  } return arr.length;
+}
 
+console.log(getIndexToIns([2, 5, 10], 15));
+console.log(getIndexToIns([2, 20, 10], 19));
+console.log(getIndexToIns([10, 20, 30, 40, 50], 35));
+////////////////////////////////////////////////////////////////////////
+SIMPLE FCC SOLUTION SORT
 
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  arr = arr.sort((a,b) => a - b);
 
-
-function bouncer(arr) {
-  // Don't show a false ID to this bouncer.
-  let arr2 = arr.slice(0, );
-  for (let i = 0; i < arr2.length; i++) {
-    if (!arr[i]) {
-      arr.splice(arr[i], 1);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= num) {
+      return i;
     }
   }
-  return arr;
+  return arr.length;
 }
+
+getIndexToIns([40, 60], 50);
+
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Mutations
+
+function mutation(arr) {
+
+  let toLower1 = arr[0].toLowerCase();
+  let toLower2 = arr[1].toLowerCase();
+  console.log(toLower2);
+
+ 
+
+  for (let i = 0;  < toLower2.length; i++) {
+    if (toLower1.indexOf(toLower2[i]) < 0) return false;
+  }return true
+}
+
+console.log(mutation(["hello", "he"]));
+///////////////////////////////////////////////////////////////
+FCC EVERY() EXAMPLE
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) != -1;
+    });
+}
+---------------------------------------------------------------------------------------------
+Basic Algorithm Scripting: Chunky Monkey
+SPLICE(), PUSH()
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  
+  let pushedArr = [];
+
+  while (arr.length > 0) {
+    let n = [];
+    let ne = arr.splice(0, size);
+    pushedArr.push(ne);
+  console.log(pushedArr);
+  };
+  
+  console.log(pushedArr);
+  return pushedArr;
+}
+
+console.log(chunkArrayInGroups(["a", "b", "c", "d", "e", "f"], 3));
+/////////////////////////////////////////////////////
+FCC Solution SLICE(), PUSH()
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  let pushArr = [];
+  let sliceArr ;
+  for (let i = 0; i < arr.length; i+= size ) {
+    sliceArr = arr.slice(i, i + size);
+    pushArr.push(sliceArr);
+    
+  }  console.log(sliceArr);
+     console.log(pushArr);
+    return pushArr;
+  
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
 
 
 
 
 
 */
-
 
 
 
