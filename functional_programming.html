@@ -871,27 +871,116 @@ function nonMutatingSort(arr) {
 }
 nonMutatingSort(globalArray);
 --------------------------------------------------------------------------------
+Functional Programming: Split a String into an Array Using the split Method
+
+function splitify(str) {
+  // Add your code below this line
+  let split = str.split(/\W/);
+  return split;
+
+  // Add your code above this line
+}
+splitify("Hello World,I-am code");
+
+
+--------------------------------------------------------------------------------
+Functional Programming: Combine an Array into a String Using the join Method
+
+
+function sentensify(str) {
+  // Add your code below this line
+  let splitted = str.split(/\W/);
+  let joined = splitted.join(" ");
+  console.log(joined);
+  return joined;
+  // Add your code above this line
+}
+sentensify("May-the-force-be-with-you");
 
 
 
 --------------------------------------------------------------------------------
+Functional Programming: Apply Functional Programming to Convert Strings to URL Slugs
 
+// the global variable
+var globalTitle = "Winter Is Coming";
 
+// Add your code below this line
+function urlSlug(title) {
+
+    var low = title.toLowerCase().split(/\W/);
+    console.log(low);
+
+    let sth = low.filter(x => x.length > 0);
+    console.log(sth);
+    
+
+    let finish = sth.join("-");
+    console.log(finish);
+
+    return finish;
+
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+/////////////////////////////////////////////////////////////////////////////
+FCC SOLUTION SO U DON'T FORGET trim()
+
+// the global variable
+var globalTitle = "Winter Is Coming";
+
+// Add your code below this line
+function urlSlug(title) {
+  return title
+    .toLowerCase()
+    .trim()
+    .split(/\s+/)
+    .join("-");
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 
 --------------------------------------------------------------------------------
+Functional Programming: Use the every Method to Check that Every Element in an Array Meets a Criteria
 
 
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.every(pos => pos > 0);
+
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
 
 --------------------------------------------------------------------------------
+Functional Programming: Use the some Method to Check that Any Elements in an Array Meet a Criteria
 
 
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.some(x => x > 0);
+
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
 
 --------------------------------------------------------------------------------
+Functional Programming: Introduction to Currying and Partial Application
 
+function add(x) {
+  // Add your code below this line
+  
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    };
+  };
 
-
---------------------------------------------------------------------------------
-
+  // Add your code above this line
+}
+add(10)(20)(30);
 
 */
 
